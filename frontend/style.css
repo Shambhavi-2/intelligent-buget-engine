@@ -1,0 +1,138 @@
+/* Core Variables & Reset */
+:root {
+    --bg-dark: #0b0f19;
+    --card-bg: rgba(20, 27, 45, 0.7);
+    --neon-blue: #00f2fe;
+    --neon-purple: #4facfe;
+    --neon-green: #059669;
+    --neon-red: #ef4444;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #f1f5f9;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 🌌 Ambient Atmospheric Background Glows */
+.glow-sphere {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
+}
+.sphere-1 { background: var(--neon-blue); top: -10%; left: -5%; }
+.sphere-2 { background: var(--neon-purple); bottom: 10%; right: -5%; }
+
+/* Typography */
+.main-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+}
+.text-gradient {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+.small-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #64748b !important;
+}
+
+/* 🔮 Premium Cyber Glassmorphism Cards */
+.cyber-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cyber-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.25);
+    box-shadow: 0 15px 50px rgba(0, 242, 254, 0.08);
+}
+
+/* Cyber Terminal Inputs */
+.cyber-input {
+    background: rgba(11, 15, 25, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+.cyber-input:focus {
+    border-color: var(--neon-blue) !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2) !important;
+}
+
+/* Futuristic Neon Status Pulses */
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.active-pulse { background-color: #10b981; box-shadow: 0 0 10px #10b981; animation: micro-pulse 1.8s infinite; }
+.active-pulse-danger { background-color: var(--neon-red); box-shadow: 0 0 10px var(--neon-red); animation: micro-pulse 1.8s infinite; }
+
+/* Buttons With Neon Shroud Effects */
+.btn-cyber-success { background: linear-gradient(135deg, #059669, #10b981); color: white; border: none; border-radius: 12px; transition: all 0.3s; }
+.btn-cyber-danger { background: linear-gradient(135deg, #dc2626, #ef4444); color: white; border: none; border-radius: 12px; transition: all 0.3s; }
+.btn-cyber-success:hover { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); transform: scale(1.01); color: white;}
+.btn-cyber-danger:hover { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); transform: scale(1.01); color: white;}
+
+/* Badges & Tags */
+.badge-neon { background: rgba(0, 242, 254, 0.1); color: var(--neon-blue); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 6px; padding: 6px 12px; font-weight: 600;}
+.live-tag { font-size: 0.75rem; font-weight: 700; color: var(--neon-blue); letter-spacing: 1px; }
+
+/* Graph Wrapper Canvas Dimensions */
+.chart-wrapper { position: relative; height: 280px; width: 100%; }
+
+/* Scroll Container Logs Styling */
+.cyber-scroll-container { max-height: 290px; overflow-y: auto; padding-right: 4px; }
+.cyber-scroll-container::-webkit-scrollbar { width: 6px; }
+.cyber-scroll-container::-webkit-scrollbar-track { background: transparent; }
+.cyber-scroll-container::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+.cyber-scroll-container::-webkit-scrollbar-thumb:hover { background: var(--neon-blue); }
+
+/* Premium Cyber Pop-up Modal Box */
+.cyber-modal-wrapper { background: #0f1422; border: 2px solid var(--neon-red); border-radius: 28px; box-shadow: 0 0 50px rgba(239, 68, 68, 0.25); }
+.neon-warning-hex { width: 80px; height: 80px; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--neon-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 0 25px rgba(239, 68, 68, 0.2); }
+.btn-neon-dismiss { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; transition: all 0.3s; }
+.btn-neon-dismiss:hover { background: white; color: black; border-color: white; }
+
+/* Inline Action Mini Buttons */
+.action-btn-edit { background: rgba(0, 242, 254, 0.1); color: var(--neon-blue); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 6px; transition: all 0.2s; }
+.action-btn-delete { background: rgba(239, 68, 68, 0.1); color: var(--neon-red); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 6px; transition: all 0.2s; }
+.action-btn-edit:hover { background: var(--neon-blue); color: black; }
+.action-btn-delete:hover { background: var(--neon-red); color: white; }
+
+/* 🌀 STAGGERED MOTION ENGINES */
+.animate-fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; }
+.animate-slide-up { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes micro-pulse { 0% { transform: scale(0.95); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.8; } }

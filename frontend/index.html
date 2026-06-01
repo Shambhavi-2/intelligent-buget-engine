@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Predictive Budget Engine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <div class="glow-sphere sphere-1"></div>
+    <div class="glow-sphere sphere-2"></div>
+
+    <div class="container my-5 position-relative">
+        <header class="text-center mb-5 animate-fade-in">
+            <span class="badge badge-neon mb-2">V2.0 Active</span>
+            <h1 class="fw-bold tracking-tight main-title">INTELLIGENT <span class="text-gradient">BUDGET ENGINE</span></h1>
+            <p class="text-secondary subtitle-text">Track multi-dimensional expenses with localized metric telemetry and micro-animations.</p>
+        </header>
+
+        <div class="row g-4">
+            <div class="col-lg-4 animate-slide-up delay-1">
+                <div class="cyber-card p-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="status-indicator active-pulse me-2"></div>
+                        <h5 class="m-0 fw-semibold section-heading">Set Metric Targets</h5>
+                    </div>
+                    <form id="budgetForm">
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small-label">TARGET MONTH</label>
+                            <input type="month" id="budgetMonth" class="form-control cyber-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small-label">BUDGET THRESHOLD (₹)</label>
+                            <input type="number" id="targetLimit" class="form-control cyber-input" placeholder="e.g. 50000" required>
+                        </div>
+                        <button type="submit" class="btn btn-cyber-success w-100 py-3 fw-bold">INITIALIZE TARGET</button>
+                    </form>
+                </div>
+
+                <div class="cyber-card p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="status-indicator active-pulse-danger me-2"></div>
+                        <h5 class="m-0 fw-semibold section-heading">Log Outlay Stream</h5>
+                    </div>
+                    <form id="expenseForm">
+                        <input type="hidden" id="editExpenseId" value="">
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small-label">PRODUCT DESCRIPTOR</label>
+                            <input type="text" id="prodName" class="form-control cyber-input" placeholder="e.g. RTX 4090 GPU" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small-label">TRANSACTION QUANTITY (₹)</label>
+                            <input type="number" id="expAmount" class="form-control cyber-input" placeholder="e.g. 150000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small-label">NAMESPACE CATEGORY</label>
+                            <select id="expCategory" class="form-control cyber-input">
+                                <option value="Electronics">Electronics</option>
+                                <option value="Food">Food</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Entertainment">Entertainment</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="expenseSubmitBtn" class="btn btn-cyber-danger w-100 py-3 fw-bold">COMMIT TRANSACTION</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-8 animate-slide-up delay-2">
+                <div class="cyber-card p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="m-0 fw-semibold section-heading">Telemetry Outlay Data Flow</h5>
+                        <span class="live-tag">● LIVE GRAPH</span>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="analyticsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="cyber-card p-4">
+                    <h5 class="mb-3 fw-semibold section-heading">Historical Archive Ledger</h5>
+                    <div id="statusArea" class="cyber-scroll-container">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content cyber-modal-wrapper">
+                <div class="modal-body text-center py-5">
+                    <div class="neon-warning-hex mx-auto mb-4">⚠️</div>
+                    <h2 class="fw-bold tracking-wide text-neon-red mb-3">CRITICAL BREACH DETECTED</h2>
+                    <p id="modalAlertMessage" class="text-secondary px-3 fs-6 font-monospace"></p>
+                    <button type="button" class="btn btn-neon-dismiss px-5 py-2.5 mt-3 rounded-pill fw-bold" data-bs-dismiss="modal">ACKNOWLEDGE WARNING</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
